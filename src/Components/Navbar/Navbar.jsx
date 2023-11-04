@@ -1,11 +1,10 @@
-import { useContext  } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 
 const Navbar = () => {
-
-
 
     const { user, logOut } = useContext(AuthContext);
 
@@ -19,13 +18,12 @@ const Navbar = () => {
             })
     }
 
-
     const navLinks = <>
         <li className="">
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-600 dark:text-sky-600 rounded-none shadow-lg font-bold border-b-2 border-sky-600" : "dark:text-white"
+                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
                 }
             >
                 Home
@@ -33,50 +31,49 @@ const Navbar = () => {
         </li>
         <li className="">
             <NavLink
-                to="/addProduct"
+                to="/blog"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-600 dark:text-sky-600 rounded-none shadow-lg font-bold border-b-2 border-sky-600" : "dark:text-white"
+                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
                 }
             >
-                Add Product
+                Blog
             </NavLink>
         </li>
         <li className="">
             <NavLink
-                to="/myCarts"
+                to="/contact"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-600 dark:text-sky-600 rounded-none shadow-lg font-bold border-b-2 border-sky-600" : "dark:text-white"
+                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
                 }
             >
-                My Cart
+                Contact
             </NavLink>
         </li>
         <li className="">
             <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-600 dark:text-sky-600 rounded-none shadow-lg font-bold border-b-2 border-sky-600" : "dark:text-white"
+                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
                 }
             >
-                Sign In
+                Login
             </NavLink>
         </li>
         <li className="">
             <NavLink
                 to="/register"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-600 dark:text-sky-600 rounded-none shadow-lg font-bold border-b-2 border-sky-600" : "dark:text-white"
+                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
                 }
             >
-                Sign Up
+                Register
             </NavLink>
         </li>
     </>
 
-
     return (
         <div className="max-w-screen-xl mx-auto px-4">
-            <div className="navbar bg-base-100 dark:bg-black flex justify-between items-center">
+            <div className="navbar bg-base-100 flex justify-between">
                 <div className="">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -86,64 +83,55 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to='/' className="flex gap-2 items-center">
-                        <img className="w-10 h-10" src="https://i.ibb.co/Drx9h54/logo.png" alt="logo" />
-                        <span className="text-cyan-700 font-bold text-3xl">E Tech</span>
-                    </Link>
+                    <Link to='/' className="text-[#152475] font-bold text-3xl">Talk Expo</Link>
                 </div>
                 <div className=" hidden lg:flex">
                     <ul className="flex gap-4 menu menu-horizontal px-1 font-semibold">
                         {navLinks}
                     </ul>
                 </div>
-                <div className="flex gap-4">
+                <div className="">
 
-                    <div>
-                        {user ? (
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 border-2 border-sky-700 rounded-full">
-                                        <img src={user.photoURL} />
-                                    </div>
-                                </label>
-                                <ul
-                                    tabIndex={0}
-                                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded w-60 dark:bg-slate-900"
-                                >
-                                    <li>
-                                        <a className="justify-between text-md hover:bg-transparent font-bold text-sky-700">
-                                            {user.displayName}
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <span className="justify-between font-semibold hover:bg-transparent mb-2 text-sky-700">{user.email}</span>
-                                    </li>
-                                    <li>
-                                        <button
-                                            onClick={handleSignOut}
-                                            className="text-sky-700 text-center hover:bg-sky-700 hover:text-[white] font-semibold px-3 py-1 rounded border border-sky-700"
-                                        >
-                                            Log Out
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        ) : (
-                            <Link to="/login">
-                                {" "}
-                                <button onClick={handleSignOut} className="text-sky-700 hover:bg-sky-700 hover:text-[white] font-semibold px-3 py-1 rounded border border-sky-700">Log In</button>{" "}
-                            </Link>
-                        )}
-                    </div>
-
-
+                    {user ? (
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 border-2 border-[#152475] rounded-full">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </label>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded w-60"
+                            >
+                                <li>
+                                    <a className="justify-between text-md hover:bg-transparent font-bold text-[#152475]">
+                                        {user.displayName}
+                                    </a>
+                                </li>
+                                <li>
+                                    <span className="justify-between font-semibold hover:bg-transparent mb-2 text-[#152475]">{user.email}</span>
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={handleSignOut}
+                                        className="text-[#152475] text-center hover:bg-[#152475] hover:text-[white] font-semibold px-3 py-1 rounded border border-[#152475]"
+                                    >
+                                        Log Out
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    ) : (
+                        <Link to="/login">
+                            {" "}
+                            <button onClick={handleSignOut} className="text-[#152475] hover:bg-[#152475] hover:text-[white] font-semibold px-3 py-1 rounded border border-[#152475]">Log In</button>{" "}
+                        </Link>
+                    )}
 
                 </div>
-
             </div>
         </div>
     );
 };
-
 
 export default Navbar;
