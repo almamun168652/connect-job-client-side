@@ -3,6 +3,7 @@ import JobByCategory from "../../Components/JobByCategory/JobByCategory";
 
 
 
+
 const Home = () => {
     return (
         <div className="max-w-[1200px] mx-auto px-4">
@@ -10,6 +11,7 @@ const Home = () => {
             <div className="my-20">
                 <JobByCategory></JobByCategory>
             </div>
+
         </div>
     );
 };

@@ -1,8 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 
 const CardDetails = () => {
+
+    const { user } = useContext(AuthContext);
 
     const { id } = useParams();
 
@@ -20,16 +25,17 @@ const CardDetails = () => {
         </div>
     }
 
-    const { 
+    const {
         banner,
         title,
-        _id,
         logo,
         salleryStart,
         salleryEnd,
         description,
         applicantNumber
     } = data || {}
+
+
 
     return (
         <div>
@@ -74,9 +80,38 @@ const CardDetails = () => {
 
                         <div className="mt-2">
                             <div className="flex justify-end items-center mt-2">
-                                <Link to={`/details/${_id}`}>
-                                    <button className='bg-[#152475] px-6 py-2 mt-1 rounded-md cursor-pointer text-white'>Apply Now</button>
-                                </Link>
+                                <button onClick={() => document.getElementById('submitResume').showModal()} className='bg-[#152475] px-6 py-2 mt-1 rounded-md cursor-pointer text-white'>Apply Now</button>
+
+                                {/* modal start */}
+
+                                <dialog id="submitResume" className="modal modal-bottom sm:modal-middle">
+                                    <div className="modal-box">
+                                        <h3 className="font-bold text-xl text-center">Apply To The Job</h3>
+                                        <div className="my-2">
+                                            <label className="text-gray-700">Your Username</label><br />
+                                            <input className="p-[6px] text-black rounded w-full border border-gray-500" defaultValue={user.displayName} type="text" name="username" id="" />
+                                        </div>
+                                        <div className="my-2">
+                                            <label className="text-gray-700">Your Email</label><br />
+                                            <input className="p-[6px] text-black rounded w-full border border-gray-500" defaultValue={user.email} type="text" name="username" id="" />
+                                        </div>
+                                        <div className="my-2">
+                                            <label className="text-gray-700">Your Resume Link</label><br />
+                                            <input placeholder="Your resume link" className="p-[6px] text-black rounded w-full border border-gray-500" type="text" name="username" id="" autoFocus/>
+                                        </div>
+                                        <div className="modal-action">
+                                            <form method="dialog">
+                                                {/* if there is a button in form, it will close the modal */}
+                                                <button className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
+
+
+                                {/* modal end */}
+
+
                             </div>
 
                         </div>
