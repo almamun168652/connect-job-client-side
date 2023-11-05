@@ -19,11 +19,11 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <li className="">
+       <li className="">
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
+                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
                 }
             >
                 Home
@@ -31,44 +31,46 @@ const Navbar = () => {
         </li>
         <li className="">
             <NavLink
-                to="/blog"
+                to="/all-jobs"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
+                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
                 }
             >
-                Blog
+                All Jobs
             </NavLink>
         </li>
         <li className="">
             <NavLink
-                to="/contact"
+                to="/applied-jobs"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
+                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
                 }
             >
-                Contact
+                Applied Jobs
             </NavLink>
         </li>
         <li className="">
             <NavLink
-                to="/login"
+                to="/add-a-jobs"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
+                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
                 }
             >
-                Login
+                Add A Job
             </NavLink>
         </li>
         <li className="">
             <NavLink
-                to="/register"
+                to="/my-jobs"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] font-bold border-b-2 border-[#152475]" : ""
+                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
                 }
             >
-                Register
+                My Jobs
             </NavLink>
         </li>
+
+
     </>
 
     return (
@@ -83,7 +85,9 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to='/' className="text-[#152475] font-bold text-3xl">Talk Expo</Link>
+                    <Link to='/' className="flex gap-1 items-center">
+                        <img className="w-12" src="https://i.ibb.co/kg76nkv/job-logo.png" alt="" /><span className="text-[#152475] font-bold text-3xl">Connect Job</span>
+                    </Link>
                 </div>
                 <div className=" hidden lg:flex">
                     <ul className="flex gap-4 menu menu-horizontal px-1 font-semibold">

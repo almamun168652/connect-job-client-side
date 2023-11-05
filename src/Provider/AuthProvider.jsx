@@ -7,22 +7,26 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState({});
+    const [loading, setLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
 
     // google sign in 
     const googleLogin = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     // create user email and pass
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // sign in user email and pass
 
     const signInUser = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -36,6 +40,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unscubscribe = onAuthStateChanged(auth, (currentUser) => {
           setUser(currentUser);
+          setLoading(false);
         });
         return () => {
           unscubscribe();
@@ -49,7 +54,7 @@ const AuthProvider = ({ children }) => {
         signInUser,
         user,
         logOut,
-
+        loading
     }
 
     return (
