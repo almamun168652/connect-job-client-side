@@ -30,8 +30,8 @@ const JobByCategory = () => {
             {/* title */}
             <SectionTitle title='Job By Category'></SectionTitle>
 
-            <Tabs>
-                <TabList>
+            <Tabs >
+                <TabList className='text-center mb-10 text-[#152475] border-b border-black font-semibold text-lg'>
                     <Tab>All Jobs</Tab>
                     <Tab>On Site</Tab>
                     <Tab>Remote</Tab>

@@ -27,6 +27,7 @@ const AddProduct = () => {
         const form = event.target;
         const banner = form.banner.value;
         const title = form.title.value;
+        const logo = form.logo.value;
         const username = form.username.value;
         const salleryStart = form.salleryStart.value;
         const salleryEnd = form.salleryEnd.value;
@@ -35,6 +36,7 @@ const AddProduct = () => {
         const jobObj = {
             banner,
             title,
+            logo,
             username,
             jobCategory,
             salleryStart,
@@ -42,10 +44,11 @@ const AddProduct = () => {
             description,
             postingDate,
             deadline,
-            applicantNumber
+            applicantNumber,
+            email: user.email
         };
 
-        
+
 
         try {
             const response = await fetch("http://localhost:5000/jobs", {
@@ -104,6 +107,22 @@ const AddProduct = () => {
                                     className="input input-bordered w-full"
                                 />
                             </label>
+                        </div>
+                    </div>
+
+                    <div className="">
+                        <div className="form-control w-full mx-2 pr-4">
+                            <label className="label">
+                                <span className="label-text text-lg text-black">
+                                    Company Logo
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                name="logo"
+                                placeholder="company logo"
+                                className="input input-bordered w-full"
+                            />
                         </div>
                     </div>
                     {/* ---- */}
@@ -213,7 +232,7 @@ const AddProduct = () => {
                         <input
                             type="submit"
                             value="Add Job"
-                            className="bg-[#152475] hover:bg-[#152475] text-white w-1/2 m-2 rounded-lg py-3 px-4 my-5 text-xl font-semibold"
+                            className="bg-[#152475] cursor-pointer hover:bg-[#152475] text-white w-1/2 m-2 rounded-lg py-3 px-4 my-5 text-xl font-semibold"
                         />
                     </div>
                 </form>
