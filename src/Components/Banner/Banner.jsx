@@ -2,7 +2,7 @@ import { FiSearch } from 'react-icons/fi';
 
 const Banner = () => {
     return (
-        <div className="relative bg-gradient-to-r from-purple-500 via-purple-600 to-blue-400 text-white min-h-screen flex items-center">
+        <div className="relative my-10 bg-gradient-to-r from-purple-500 via-purple-600 to-blue-400 text-white min-h-screen flex items-center">
             <div className="container mx-auto">
                 <div className="bg-transparent w-full flex items-center justify-center flex-col sm:flex-row lg:mt-0 md:mt-0 mt-44">
                     <div data-aos="fade-up"

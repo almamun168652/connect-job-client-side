@@ -1,20 +1,21 @@
 import PropTypes from 'prop-types';
 import { MdPostAdd } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const JobCatCard = ({ item }) => {
 
-    const { 
+    const {
         title,
         username,
-        
+        _id,
         salleryStart,
         salleryEnd,
-        
+
         postingDate,
         deadline,
         applicantNumber } = item || {}
 
-    console.log(postingDate.slice(0, 10))
+    console.log(_id)
 
     return (
         <div>
@@ -36,7 +37,9 @@ const JobCatCard = ({ item }) => {
                 </div>
 
                 <div className='w-full text-right'>
-                    <button className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>View Details</button>
+                    <Link to={`/details/${_id}`}>
+                        <button className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

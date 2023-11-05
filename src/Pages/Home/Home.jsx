@@ -7,7 +7,9 @@ const Home = () => {
     return (
         <div className="max-w-[1200px] mx-auto px-4">
             <Banner></Banner>
-            <JobByCategory></JobByCategory>
+            <div className="my-20">
+                <JobByCategory></JobByCategory>
+            </div>
         </div>
     );
 };
