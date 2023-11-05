@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
-import swal from "sweetalert";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 
 
@@ -49,7 +48,7 @@ const AddProduct = () => {
         
 
         try {
-            const response = await fetch("https://brand-shop-server-9hdb4ek57-almamun168652-gmailcom.vercel.app/products", {
+            const response = await fetch("http://localhost:5000/jobs", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -60,7 +59,7 @@ const AddProduct = () => {
 
 
             if (result.acknowledged) {
-                swal({title}, "Job Posted Successfully", "success");
+                swal('done', "Job Posted Successfully", "success");
             }
 
         } catch (error) {
