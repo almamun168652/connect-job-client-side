@@ -5,7 +5,7 @@ import JobByCategory from "../../Components/JobByCategory/JobByCategory";
 
 const Home = () => {
     return (
-        <div>
+        <div className="max-w-[1200px] mx-auto px-4">
             <Banner></Banner>
             <JobByCategory></JobByCategory>
         </div>

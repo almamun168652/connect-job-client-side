@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div>
+        <div className="">
             <div className="hero min-h-[80vh]">
                 <div className="hero-content flex-col-reverse gap-10 h-full w-full lg:flex-row bg-gradient-to-r from-[#24aca5c6] to-rose-500">
                     <div data-aos="fade-up" data-aos-duration="1000" className="text-center w-full md:w-1/2">
