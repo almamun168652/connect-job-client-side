@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
@@ -8,9 +8,7 @@ const MyJobs = () => {
     const { user , loading } = useContext(AuthContext)
 
     const { data=[], isLoading } = useQuery({
-
-        queryKey:  ['abcd'],
-        
+        queryKey:  ['myJobs'],
         queryFn: async () => {
             if (user?.email) {
                 const data = await fetch(`http://localhost:5000/jobs/${user?.email}`)
@@ -20,7 +18,11 @@ const MyJobs = () => {
         enabled: !loading && !!user?.email
     })
 
-    console.log(data);
+    if (isLoading == true) {
+        return <div className="flex justify-center items-center h-[40vh]">
+            <span className="loading loading-lg loading-spinner text-[#152475]"></span>
+        </div>
+    }
 
     // useEffect(()=>{
     //     fetch(`http://localhost:5000/jobs/${user?.email}`)
@@ -31,7 +33,7 @@ const MyJobs = () => {
 
     return (
         <div>
-            My Jobs
+           {data.length}
         </div>
     );
 };

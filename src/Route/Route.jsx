@@ -45,7 +45,7 @@ const createdRoute = createBrowserRouter([
                 element: <MyJobs></MyJobs>
             },
             {
-                path: '/details/:id',
+                path: '/job/:id',
                 element: <CardDetails></CardDetails>
             },
            

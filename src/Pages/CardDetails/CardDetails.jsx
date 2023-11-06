@@ -8,6 +8,7 @@ import swal from "sweetalert";
 
 const CardDetails = () => {
 
+
     const today = new Date();
     const currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     const [currentYear, currentMonth, currentDay] = currentDate.split('-').map(Number);
@@ -16,10 +17,10 @@ const CardDetails = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
 
-    const { data, isLoading , isFetching } = useQuery({
+    const { data, isLoading  } = useQuery({
         queryKey: ['jobsDetails'],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/jobs/details/${id}`);
+            const data = await fetch(`http://localhost:5000/job/${id}`);
             return await data.json();
         }
     })
@@ -116,11 +117,12 @@ const CardDetails = () => {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                        // body: JSON.stringify({applicantNumber}),
                     })
                         .then((res) => res.json())
                         .then((data) => {
-                            console.log(data);
+                            if(data.modifiedCount){
+                                console.log(data);
+                            }
                         });
                     }catch(error){
                         console.log(error);

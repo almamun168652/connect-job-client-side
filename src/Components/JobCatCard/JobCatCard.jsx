@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { MdPostAdd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-const JobCatCard = ({ item }) => {
+const JobCatCard = ({ item  }) => {
 
     const {
         title,
@@ -37,7 +37,7 @@ const JobCatCard = ({ item }) => {
                 </div>
 
                 <div className='w-full text-right'>
-                    <Link to={`/details/${_id}`}>
+                    <Link to={`/job/${_id}`}>
                         <button className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>View Details</button>
                     </Link>
                 </div>

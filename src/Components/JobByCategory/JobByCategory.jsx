@@ -8,7 +8,7 @@ import CategoryCard from "../CategoryCard/CategoryCard";
 
 const JobByCategory = () => {
 
-    const { data, isLoading } = useJobs();
+    const { data, isLoading  } = useJobs();
 
 
     if (isLoading == true) {

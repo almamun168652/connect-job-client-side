@@ -44,7 +44,7 @@ const AddProduct = () => {
             description,
             postingDate,
             deadline,
-            applicantNumber,
+            applicantNumber: parseInt(applicantNumber),
             email: user.email
         };
 
