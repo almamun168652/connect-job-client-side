@@ -17,7 +17,7 @@ const CardDetails = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
 
-    const { data, isLoading  } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['jobsDetails'],
         queryFn: async () => {
             const data = await fetch(`http://localhost:5000/job/${id}`);
@@ -109,25 +109,23 @@ const CardDetails = () => {
 
                     // updated number of applicant
 
-                    
-
-                    try{
+                    try {
                         fetch(`http://localhost:5000/jobs/${_id}`, {
-                        method: "PATCH",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    })
-                        .then((res) => res.json())
-                        .then((data) => {
-                            if(data.modifiedCount){
-                                console.log(data);
-                            }
-                        });
-                    }catch(error){
+                            method: "PATCH",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                if (data.modifiedCount) {
+                                    console.log(data);
+                                }
+                            });
+                    } catch (error) {
                         console.log(error);
                     }
-                    
+
                 }
 
             } catch (error) {
