@@ -17,7 +17,7 @@ const CardDetails = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
 
-    const { data, isLoading } = useQuery({
+    const { data, isLoading , refetch } = useQuery({
         queryKey: ['jobsDetails'],
         queryFn: async () => {
             const data = await fetch(`http://localhost:5000/job/${id}`);
@@ -120,6 +120,7 @@ const CardDetails = () => {
                             .then((data) => {
                                 if (data.modifiedCount) {
                                     console.log(data);
+                                    refetch();
                                 }
                             });
                     } catch (error) {
