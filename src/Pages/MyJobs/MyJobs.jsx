@@ -27,25 +27,7 @@ const MyJobs = () => {
         </div>
     }
 
-    // useEffect(()=>{
-    //     fetch(`http://localhost:5000/jobs/${user?.email}`)
-    //         .then(res => res.json())
-    //         .then(data => console.log(data));
-    // } , [user?.email])
-
-    // const {
-    //     banner,
-    //     title,
-    //     logo,
-    //     username,
-    //     jobCategory,
-    //     salleryStart,
-    //     salleryEnd,
-    //     description,
-    //     postingDate,
-    //     deadline
-    // } = data || {}
-
+   
  
 
 
