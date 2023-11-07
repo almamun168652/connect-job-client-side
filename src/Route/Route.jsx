@@ -8,13 +8,14 @@ import AppliedJobs from "../Pages/AppliedJobs/AppliedJobs";
 import AddAJobs from "../Pages/AddAJobs/AddAJobs";
 import MyJobs from "../Pages/MyJobs/MyJobs";
 import CardDetails from "../Pages/CardDetails/CardDetails";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const createdRoute = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
-        errorElement: <h1>Error Page</h1>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
