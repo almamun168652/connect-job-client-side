@@ -1,20 +1,23 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-
+import SectionTitle from "../../Components/SectionTitle/SectionTitle";
+import MyjobTr from "../../Components/MyJobTr/MyjobTr";
 
 const MyJobs = () => {
 
-    const { user , loading } = useContext(AuthContext)
+    // const [optionBrand, setOptionBrand] = useState();
 
-    const { data=[], isLoading } = useQuery({
-        queryKey:  ['myJobs'],
+    const { user, loading } = useContext(AuthContext);
+
+    const { data = [], isLoading , refetch } = useQuery({
+        queryKey: ['myJobs'],
         queryFn: async () => {
             if (user?.email) {
                 const data = await fetch(`http://localhost:5000/jobs/${user?.email}`)
                 return await data.json();
             }
-        } ,
+        },
         enabled: !loading && !!user?.email
     })
 
@@ -30,10 +33,64 @@ const MyJobs = () => {
     //         .then(data => console.log(data));
     // } , [user?.email])
 
+    // const {
+    //     banner,
+    //     title,
+    //     logo,
+    //     username,
+    //     jobCategory,
+    //     salleryStart,
+    //     salleryEnd,
+    //     description,
+    //     postingDate,
+    //     deadline
+    // } = data || {}
+
+ 
+
 
     return (
-        <div>
-           {data.length}
+        <div className="max-w-[1200px] mx-auto px-4 my-20">
+
+            <SectionTitle title='My Jobs'></SectionTitle>
+
+            <div className="overflow-x-auto">
+
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs uppercase bg-[#152475] text-white">
+                        <tr>
+
+                            <th scope="col" className="px-6 py-3">
+                                Job Title
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Posting Date
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Application Deadline
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Sallery Range
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Update Job
+                            </th>
+                            <th scope="col" className="px-6 py-3 text-center">
+                                Delete Job
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            data.map(item => <MyjobTr refetch={refetch} key={item._id} item={item}></MyjobTr>)
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
     );
 };
