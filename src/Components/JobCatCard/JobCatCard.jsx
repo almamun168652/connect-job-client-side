@@ -1,8 +1,37 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { MdPostAdd } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
+import { AuthContext } from '../../Provider/AuthProvider';
+import './jobCard.css';
 
-const JobCatCard = ({ item  }) => {
+const JobCatCard = ({ item }) => {
+
+    const {user} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+    const handleDetailsGo = (_id) => {
+
+        if(!user){
+            swal({
+                title: "Sorry",
+                text: "Must Log In First to See Details",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        navigate('/login');
+                    }
+                });
+        }else{
+            navigate(`/job/${_id}`);
+            
+        }
+    }
 
     const {
         title,
@@ -37,9 +66,9 @@ const JobCatCard = ({ item  }) => {
                 </div>
 
                 <div className='w-full text-right'>
-                    <Link to={`/job/${_id}`}>
-                        <button className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>View Details</button>
-                    </Link>
+                    {/* <Link to={`/job/${_id}`}> */}
+                    <button onClick={()=> handleDetailsGo(_id)} className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>View Details</button>
+                    {/* </Link> */}
                 </div>
             </div>
         </div>

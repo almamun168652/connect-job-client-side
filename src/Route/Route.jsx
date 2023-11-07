@@ -9,6 +9,8 @@ import AddAJobs from "../Pages/AddAJobs/AddAJobs";
 import MyJobs from "../Pages/MyJobs/MyJobs";
 import CardDetails from "../Pages/CardDetails/CardDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+
 
 
 const createdRoute = createBrowserRouter([
@@ -35,21 +37,21 @@ const createdRoute = createBrowserRouter([
             },
             {
                 path: '/applied-jobs',
-                element: <AppliedJobs></AppliedJobs>
+                element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>
             },
             {
                 path: '/add-a-jobs',
-                element: <AddAJobs></AddAJobs>
+                element: <PrivateRoute><AddAJobs></AddAJobs></PrivateRoute>
             },
             {
                 path: '/my-jobs',
-                element: <MyJobs></MyJobs>
+                element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>
             },
             {
                 path: '/job/:id',
                 element: <CardDetails></CardDetails>
             },
-           
+
         ]
     }
 ])

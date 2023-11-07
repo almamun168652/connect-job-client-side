@@ -19,6 +19,7 @@ const Login = () => {
                 console.log(res);
                 swal("Good job!", "Request Successfully!", "success");
                 navigate(location.state ? location.state : '/');
+                console.log(location.state);
             })
             .catch(err => {
                 setErr(err.code);

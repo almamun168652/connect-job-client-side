@@ -27,7 +27,7 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="w-3/4 sm:w-1/2 h-auto max-h-70 lg:max-h-full object-cover mt-4 sm:mt-0 ml-0 sm:ml-4 relative lg:block hidden">
-                        
+
                         <img
                             src="https://brayo.co/static/da15ee8a121c0b65611d997546f2741f/f3583/person-with-screens.png"
                             alt="Banner Image"
