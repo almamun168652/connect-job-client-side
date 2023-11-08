@@ -1,8 +1,10 @@
-# React + Vite
+# Connect-Job
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live-Link: [Live-Link]()
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Project Features
+- You can use our Connect-Job website to find various job post.
+- Here you can see 4 different category of job.
+- You must register and login our connect-job website to see details and apply any job.
+- If you want you can advise and job post for your business or company.
+- You can visit our website using all of the devices. because our connect-job website is resposive all the screen size.
