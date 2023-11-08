@@ -10,6 +10,7 @@ import MyJobs from "../Pages/MyJobs/MyJobs";
 import CardDetails from "../Pages/CardDetails/CardDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import Blogs from "../Pages/Blogs/Blogs";
 
 
 
@@ -50,6 +51,10 @@ const createdRoute = createBrowserRouter([
             {
                 path: '/job/:id',
                 element: <CardDetails></CardDetails>
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
 
         ]
