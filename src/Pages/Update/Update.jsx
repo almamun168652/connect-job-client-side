@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import {  useState } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 const Update = () => {
@@ -12,10 +12,10 @@ const Update = () => {
     const navigate = useNavigate();
 
 
-    const { data , refetch , isLoading } = useQuery({
+    const { data, refetch, isLoading } = useQuery({
         queryKey: ['updateData'],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/job/${id}`);
+            const data = await fetch(`https://connect-job-server.vercel.app/job/${id}`);
             return await data.json();
         }
     })
@@ -46,7 +46,7 @@ const Update = () => {
     } = data || {}
 
 
-  const handleUpdateJob = async (event) => {
+    const handleUpdateJob = async (event) => {
 
         event.preventDefault();
         const form = event.target;
@@ -69,7 +69,7 @@ const Update = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/jobs/${data._id}`, {
+            const response = await fetch(`https://connect-job-server.vercel.app/jobs/${data._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const Update = () => {
                     </div>
 
 
-                    
+
 
                     <div method="dialog" className="flex justify-end">
                         <button type="submit" className="bg-[#152475] px-8 py-2 mt-1 rounded-md cursor-pointer text-white">

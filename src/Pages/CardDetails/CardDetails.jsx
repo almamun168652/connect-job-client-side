@@ -21,7 +21,7 @@ const CardDetails = () => {
     const { data, isLoading, refetch } = useQuery({
         queryKey: ['jobsDetails'],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/job/${id}`);
+            const data = await fetch(`https://connect-job-server.vercel.app/job/${id}`);
             return await data.json();
         }
     })
@@ -95,7 +95,7 @@ const CardDetails = () => {
 
         if (currentYear < deadlineYear || (currentYear === deadlineYear) && (currentMonth < deadlineMonth || (currentMonth === deadlineMonth && currentDay <= deadlineDay))) {
             try {
-                const response = await fetch("http://localhost:5000/applied", {
+                const response = await fetch("https://connect-job-server.vercel.app/applied", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -111,7 +111,7 @@ const CardDetails = () => {
                     // updated number of applicant
 
                     try {
-                        fetch(`http://localhost:5000/jobs/${_id}`, {
+                        fetch(`https://connect-job-server.vercel.app/jobs/${_id}`, {
                             method: "PATCH",
                             headers: {
                                 "Content-Type": "application/json",

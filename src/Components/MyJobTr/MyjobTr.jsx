@@ -11,7 +11,7 @@ const MyjobTr = ({ item, refetch }) => {
 
     const handleDeleteJob = async (_id) => {
         try {
-            const response = await fetch(`http://localhost:5000/jobs/${_id}`, {
+            const response = await fetch(`https://connect-job-server.vercel.app/jobs/${_id}`, {
                 method: "DELETE",
             });
             const result = await response.json();
