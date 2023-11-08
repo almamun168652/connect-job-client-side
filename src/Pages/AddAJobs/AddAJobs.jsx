@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Provider/AuthProvider";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 
 
 
@@ -76,6 +77,11 @@ const AddProduct = () => {
 
     return (
         <div className="max-w-screen-xl px-4 mx-auto">
+
+            <Helmet>
+                <title>Connet-Job | Add-A-Job</title>
+            </Helmet>
+
             <div className="border shadow-xl rounded-md p-4 my-6">
                 <h2 className="text-2xl font-bold text-center text-[#152475]">
                     Add A Job

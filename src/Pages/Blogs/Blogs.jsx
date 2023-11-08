@@ -1,9 +1,16 @@
+import { Helmet } from "react-helmet";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 
 
 const Blogs = () => {
     return (
         <div className="max-w-[1200px] mx-auto px-4 mb-14">
+
+
+            <Helmet>
+                <title>Connet-Job | My-Jobs</title>
+            </Helmet>
+
             <SectionTitle title="Your Ask? Our Answer."></SectionTitle>
             <div>
                 <div className="collapse collapse-plus bg-sky-300">

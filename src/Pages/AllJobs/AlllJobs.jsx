@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useJobs from "../../hooks/useJobs";
 import { FiSearch } from 'react-icons/fi';
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AlllJobs = () => {
 
@@ -40,10 +41,15 @@ const AlllJobs = () => {
         setIsTrueBtn(true);
     }
 
-    
+
 
     return (
         <div className="max-w-[1200px] mx-auto px-4 my-14">
+
+            <Helmet>
+                <title>Connet-Job | All-Jobs</title>
+            </Helmet>
+
 
             <form onSubmit={handleSearch} className="relative flex items-center md:w-1/3 mx-auto mb-4">
                 <input

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import MyjobTr from "../../Components/MyJobTr/MyjobTr";
+import { Helmet } from "react-helmet";
 
 const MyJobs = () => {
 
@@ -10,7 +11,7 @@ const MyJobs = () => {
 
     const { user, loading } = useContext(AuthContext);
 
-    const { data = [], isLoading , refetch } = useQuery({
+    const { data = [], isLoading, refetch } = useQuery({
         queryKey: ['myJobs'],
         queryFn: async () => {
             if (user?.email) {
@@ -27,12 +28,16 @@ const MyJobs = () => {
         </div>
     }
 
-   
- 
+
+
 
 
     return (
         <div className="max-w-[1200px] mx-auto px-4 my-20">
+
+            <Helmet>
+                <title>Connet-Job | My-Jobs</title>
+            </Helmet>
 
             <SectionTitle title='My Jobs'></SectionTitle>
 

@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 
 const CardDetails = () => {
 
@@ -17,7 +18,7 @@ const CardDetails = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
 
-    const { data, isLoading , refetch } = useQuery({
+    const { data, isLoading, refetch } = useQuery({
         queryKey: ['jobsDetails'],
         queryFn: async () => {
             const data = await fetch(`http://localhost:5000/job/${id}`);
@@ -85,14 +86,14 @@ const CardDetails = () => {
 
         // validation
 
-        // if (email === modalEmail) {
-        //     swal('Sorry', "You Can't apply your own job.", "warning");
-        //     return;
-        // }
+        if (email === modalEmail) {
+            swal('Sorry', "You Can't apply your own job.", "warning");
+            return;
+        }
 
         // (year1 < year2 || (year1 === year2 && (month1 < month2 || (month1 === month2 && day1 < day2))))
 
-        if (currentYear < deadlineYear || (currentYear === deadlineYear) && (currentMonth < deadlineMonth || (currentMonth === deadlineMonth && currentDay < deadlineDay))) {
+        if (currentYear < deadlineYear || (currentYear === deadlineYear) && (currentMonth < deadlineMonth || (currentMonth === deadlineMonth && currentDay <= deadlineDay))) {
             try {
                 const response = await fetch("http://localhost:5000/applied", {
                     method: "POST",
@@ -148,6 +149,12 @@ const CardDetails = () => {
     return (
         <div>
             <div>
+
+
+                <Helmet>
+                    <title>Connet-Job | Job-Details</title>
+                </Helmet>
+
                 <div>
                     <div className="max-w-6xl rounded-md shadow-md my-10 px-4 md:px-10 py-6 mx-auto bg-gray-50 border">
                         {" "}

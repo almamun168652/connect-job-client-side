@@ -3,12 +3,15 @@ import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import swal from 'sweetalert';
+import { Helmet } from 'react-helmet';
+// import axios from 'axios';
 
 const Login = () => {
 
     const [err, setErr] = useState('');
 
-    const { googleLogin, logInUser } = useContext(AuthContext);
+    const { googleLogin, signInUser } = useContext(AuthContext);
+
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -32,13 +35,21 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+
         setErr('');
 
-        logInUser(email, password)
+
+        signInUser(email, password)
             .then(res => {
                 console.log(res);
                 swal("Good job!", "Login Successfully!", "success");
                 navigate(location.state ? location.state : '/');
+
+                // const userEmail = {email: email};
+                // console.log(userEmail);
+
+             
+
             })
             .catch(err => {
                 setErr(err.code);
@@ -51,6 +62,12 @@ const Login = () => {
 
     return (
         <div>
+
+
+            <Helmet>
+                <title>Connet-Job | Sign-In</title>
+            </Helmet>
+
             <div className="container mx-auto ">
                 <div className=" px-4 my-20">
                     <div className="border p-5 w-full max-w-sm mx-auto space-y-6">

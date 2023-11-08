@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -62,6 +63,12 @@ const Register = () => {
 
     return (
         <div>
+
+
+            <Helmet>
+                <title>Connet-Job | Sign-Up</title>
+            </Helmet>
+
             <div className="container mx-auto ">
                 <div className=" my-20">
                     <div className="border p-5 w-full max-w-sm mx-auto space-y-6">

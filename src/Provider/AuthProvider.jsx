@@ -30,13 +30,13 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-        // update profile
-        const profileUpdate = (name, photo) => {
-            return updateProfile(auth.currentUser, {
-                displayName: name,
-                photoURL: photo,
-            });
-        }
+    // update profile
+    const profileUpdate = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo,
+        });
+    }
 
 
     // logout
@@ -45,15 +45,36 @@ const AuthProvider = ({ children }) => {
     }
 
 
+
+    // useEffect(() => {
+    //     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+    //         const userEmail = currentUser?.email || user?.email;
+    //         const loggedUser = { email: userEmail }
+    //         setUser(currentUser)
+    //         if (currentUser) {
+    //             axios.post("http://localhost:5000/jwt", loggedUser, { withCredentials: true })
+    //                 .then(result => {
+    //                     console.log(result.data);
+    //                 })
+    //         }
+    //         setLoading(false)
+    //     })
+    //     return () => {
+    //         unSubscribe()
+    //     }
+    // }, [user])
+
+
+
     useEffect(() => {
         const unscubscribe = onAuthStateChanged(auth, (currentUser) => {
-          setUser(currentUser);
-          setLoading(false);
+            setUser(currentUser);
+            setLoading(false);
         });
         return () => {
-          unscubscribe();
+            unscubscribe();
         };
-      }, []);
+    }, []);
 
 
     const authInfo = {
@@ -63,7 +84,7 @@ const AuthProvider = ({ children }) => {
         user,
         logOut,
         loading,
-        profileUpdate
+        profileUpdate,
     }
 
     return (

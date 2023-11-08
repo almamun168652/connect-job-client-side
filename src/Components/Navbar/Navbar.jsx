@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-       <li className="">
+        <li className="">
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
@@ -39,36 +39,40 @@ const Navbar = () => {
                 All Jobs
             </NavLink>
         </li>
-        <li className="">
-            <NavLink
-                to="/applied-jobs"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
-                }
-            >
-                Applied Jobs
-            </NavLink>
-        </li>
-        <li className="">
-            <NavLink
-                to="/add-a-jobs"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-b rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
-                }
-            >
-                Add A Job
-            </NavLink>
-        </li>
-        <li className="">
-            <NavLink
-                to="/my-jobs"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
-                }
-            >
-                My Jobs
-            </NavLink>
-        </li>
+        {
+            user ? <>
+                <li className="">
+                    <NavLink
+                        to="/applied-jobs"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
+                        }
+                    >
+                        Applied Jobs
+                    </NavLink>
+                </li>
+                <li className="">
+                    <NavLink
+                        to="/add-a-jobs"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-b rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
+                        }
+                    >
+                        Add A Job
+                    </NavLink>
+                </li>
+                <li className="">
+                    <NavLink
+                        to="/my-jobs"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#152475] rounded-none shadow-lg font-bold border-b-2 border-[#152475]" : "text-[#152475]"
+                        }
+                    >
+                        My Jobs
+                    </NavLink>
+                </li>
+            </> : <></>
+        }
         <li className="">
             <NavLink
                 to="/blogs"
@@ -108,14 +112,14 @@ const Navbar = () => {
 
                     {user ? (
                         <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <label data-tip={user.displayName} tabIndex={0} className="btn tooltip tooltip-left btn-ghost btn-circle avatar">
                                 <div className="w-10 border-2 border-[#152475] rounded-full">
                                     <img src={user.photoURL} />
                                 </div>
                             </label>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded w-60"
+                                className="menu menu-sm dropdown-content mt-3 invisible absolute right-20 z-[1] p-2 shadow bg-base-100 rounded w-60"
                             >
                                 <li>
                                     <a className="justify-between text-md hover:bg-transparent font-bold text-[#152475]">
