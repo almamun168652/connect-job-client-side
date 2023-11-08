@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto footer">
         <aside>
           <Link to='/' className="flex gap-1 items-center">
-            <img className="w-12" src="https://i.ibb.co/kg76nkv/job-logo.png" alt="" /><span className="text-[#152475] font-bold text-3xl">Connect Job</span>
+            <img className="w-8 md:w-12" src="https://i.ibb.co/kg76nkv/job-logo.png" alt="" /><span className="text-[#152475] font-bold text-xl md:text-3xl">Connect Job</span>
           </Link>
           <p>
             Connect Job Ltd.

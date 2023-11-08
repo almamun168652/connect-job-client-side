@@ -160,7 +160,7 @@ const CardDetails = () => {
                         <div className="flex flex-col md:flex-row gap-4 justify-between mt-8 mb-4">
                             <a
                                 href="#"
-                                className="px-2 py-1 font-bold text-[#152475]  text-lg mr-4"
+                                className="px-2 py-1 font-bold text-[#152475] text-md  md:text-lg mr-4"
                             >
                                 Sallery Range: {`${salleryStart} $ - ${salleryEnd} $`}
                             </a>

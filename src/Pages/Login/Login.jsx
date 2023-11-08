@@ -52,7 +52,7 @@ const Login = () => {
     return (
         <div>
             <div className="container mx-auto ">
-                <div className=" my-20">
+                <div className=" px-4 my-20">
                     <div className="border p-5 w-full max-w-sm mx-auto space-y-6">
                         <h2 className="text-2xl font-bold">Login</h2>
                         {err ? <p className="text-red-600 max-w-[400px] text-sm text-center relative -bottom-4">{err}</p> : ''}

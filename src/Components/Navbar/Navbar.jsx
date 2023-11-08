@@ -96,7 +96,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to='/' className="flex gap-1 items-center">
-                        <img className="w-12" src="https://i.ibb.co/kg76nkv/job-logo.png" alt="" /><span className="text-[#152475] font-bold text-3xl">Connect Job</span>
+                        <img className="w-8 md:w-12" src="https://i.ibb.co/kg76nkv/job-logo.png" alt="" /><span className="text-[#152475] font-bold text-xl md:text-3xl">Connect Job</span>
                     </Link>
                 </div>
                 <div className=" hidden lg:flex">
@@ -138,7 +138,7 @@ const Navbar = () => {
                     ) : (
                         <Link to="/login">
                             {" "}
-                            <button onClick={handleSignOut} className="text-[#152475] hover:bg-[#152475] hover:text-[white] font-semibold px-3 py-1 rounded border border-[#152475]">Log In</button>{" "}
+                            <button onClick={handleSignOut} className="text-[#152475] hover:bg-[#152475] hover:text-[white] font-md md:font-semobold px-1 md:px-3 md:py-1 rounded border border-[#152475]">Log In</button>{" "}
                         </Link>
                     )}
 

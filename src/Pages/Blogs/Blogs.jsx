@@ -8,7 +8,7 @@ const Blogs = () => {
             <div>
                 <div className="collapse collapse-plus bg-sky-300">
                     <input type="radio" name="my-accordion-3" checked="checked" />
-                    <div className="collapse-title text-xl text-[#152475] font-bold">
+                    <div className="collapse-title text-md md:text-xl text-[#152475] font-bold">
                         What is an access token and refresh token? How do they work and where should we
                         store them on the client-side?
 
@@ -21,7 +21,7 @@ const Blogs = () => {
                 </div>
                 <div className="collapse collapse-plus bg-sky-300">
                     <input type="radio" name="my-accordion-3" />
-                    <div className="collapse-title text-xl font-bold text-[#152475]">
+                    <div className="collapse-title text-md md:text-xl font-bold text-[#152475]">
                         What is express js? What is Nest JS?
                     </div>
                     <div className="collapse-content ">
@@ -32,7 +32,7 @@ const Blogs = () => {
                 </div>
                 <div className="collapse collapse-plus bg-sky-300">
                     <input type="radio" name="my-accordion-3" />
-                    <div className="collapse-title text-xl font-bold text-[#152475]">
+                    <div className="collapse-title text-md md:text-xl font-bold text-[#152475]">
                         Explain your code?
                     </div>
                     <div className="collapse-content">

@@ -57,7 +57,7 @@ const JobCatCard = ({ item }) => {
                 <h1 className='text-2xl font-bold text-[#152475]'>{title}</h1>
 
                 <div>
-                    <span className='text-lg font-semibold text-[[#152475]]'>Salary range: {`${salleryStart} $ - ${salleryEnd} $`}</span>
+                    <span className='text-md md:text-lg font-semibold text-[[#152475]]'>Salary range: {`${salleryStart} $ - ${salleryEnd} $`}</span>
                 </div>
 
                 <div className=''>
