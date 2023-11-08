@@ -1,40 +1,33 @@
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch } from "react-icons/fi";
+
 
 const Banner = () => {
     return (
-        <div className="relative my-10 bg-gradient-to-r from-purple-500 via-purple-600 to-blue-400 text-white min-h-screen flex items-center">
-            <div className="container mx-auto">
-                <div className="bg-transparent w-full flex items-center justify-center flex-col sm:flex-row lg:mt-0 md:mt-0 mt-44">
-                    <div data-aos="fade-up"
-                        data-aos-duration="3000" className="w-full sm:w-2/3 lg:w-1/2 flex flex-col items-center">
-                        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold mb-2 sm:mb-4 text-center">
-                            Find Your Haven of Opportunities
-                        </h1>
-                        <p className="text-base sm:text-lg text-center mb-2 sm:mb-4">
-                            Discover Your Dream Job with HireHaven: Find, Apply, and Succeed.
-                        </p>
-                        <div className="relative w-full max-w-md lg:px-0 md:px-4 px-5">
-                            <div className="relative flex items-center">
+        <div className="max-w-screen-xl px-4 mx-auto my-10">
+            <div className="bg-[url(https://i.ibb.co/VD1C31N/banner.jpg)] bg-no-repeat bg-cover bg-center">
+                <section className=" bg-[#000000b1] flex items-center min-h-[80vh]">
+                    <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+
+                        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-4xl lg:text-5xl text-white">Find Your Job With US</h1>
+                        <p className="my-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48 ">Take the 3 personality tests to become more self-aware. These tests will help you better understand how you think and career, and what matters to you in a job</p>
+                        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+
+                            <form className="relative flex items-center md:w-1/3 mx-auto mb-4">
                                 <input
                                     type="text"
-                                    className="w-full h-14 pl-12 pr-10 bg-white text-gray-800 border border-gray-300 focus:outline-none focus:ring focus:border-purple-300 rounded-none"
+                                    name="search"
+                                    className="w-full h-14 pl-4 pr-10 bg-white text-gray-800   focus:outline-none focus:ring focus:border-[#152475] rounded-none border border-[#152475]"
                                     placeholder="Find Jobs..."
                                 />
-                                <button className="absolute  right-2 lg:bg-blue-500 md:bg-violet-500 bg-violet-500  text-white h-10 w-10 flex items-center justify-center">
+                                <button type="submit" className="absolute right-2 bg-[#152475] text-white h-10 w-10 flex items-center justify-center">
                                     <FiSearch className="w-6 h-6" />
                                 </button>
-                            </div>
+                            </form>
+
+
                         </div>
                     </div>
-                    <div className="w-3/4 sm:w-1/2 h-auto max-h-70 lg:max-h-full object-cover mt-4 sm:mt-0 ml-0 sm:ml-4 relative lg:block hidden">
-
-                        <img
-                            src="https://brayo.co/static/da15ee8a121c0b65611d997546f2741f/f3583/person-with-screens.png"
-                            alt="Banner Image"
-                        />
-                    </div>
-
-                </div>
+                </section>
             </div>
         </div>
     );
