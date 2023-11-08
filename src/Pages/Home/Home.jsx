@@ -1,6 +1,7 @@
 import Banner from "../../Components/Banner/Banner";
 import HowWork from "../../Components/HowWork/HowWork";
 import JobByCategory from "../../Components/JobByCategory/JobByCategory";
+import OurSponser from "../../Components/OurSponser/OurSponser";
 
 
 
@@ -15,6 +16,9 @@ const Home = () => {
 
             <div className="mb-20">
                 <HowWork></HowWork>
+            </div>
+            <div className="mb-20 mt-10">
+                <OurSponser></OurSponser>
             </div>
 
         </div>
