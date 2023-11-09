@@ -8,13 +8,13 @@ import './jobCard.css';
 
 const JobCatCard = ({ item }) => {
 
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
     const handleDetailsGo = (_id) => {
 
-        if(!user){
+        if (!user) {
             swal({
                 title: "Sorry",
                 text: "Must Log In First to See Details",
@@ -27,9 +27,9 @@ const JobCatCard = ({ item }) => {
                         navigate('/login');
                     }
                 });
-        }else{
+        } else {
             navigate(`/job/${_id}`);
-            
+
         }
     }
 
@@ -67,7 +67,7 @@ const JobCatCard = ({ item }) => {
 
                 <div className='w-full text-right'>
                     {/* <Link to={`/job/${_id}`}> */}
-                    <button onClick={()=> handleDetailsGo(_id)} className='my'>View Details</button>
+                    <button className="bg-[#152475] px-4 py-1 mt-1 rounded md cursor-pointer text-white" onClick={() => handleDetailsGo(_id)}>View Details</button>
                     {/* </Link> */}
                 </div>
             </div>
