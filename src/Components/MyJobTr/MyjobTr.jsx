@@ -8,9 +8,6 @@ import Swal from 'sweetalert2';
 const MyjobTr = ({ item, refetch }) => {
 
 
-
-
-
     const hanldeDelete = async (_id) => {
 
         try {
@@ -26,7 +23,7 @@ const MyjobTr = ({ item, refetch }) => {
                 if (result.isConfirmed) {
 
                     try {
-                        const response = await fetch(`https://connect-job-681f5.web.app/jobs/${_id}`, {
+                        const response = await fetch(`https://connect-job-server.vercel.app/jobs/${_id}`, {
                             method: "DELETE",
                         });
                         const result = await response.json();

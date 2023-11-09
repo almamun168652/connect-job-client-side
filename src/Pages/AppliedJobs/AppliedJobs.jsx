@@ -21,7 +21,7 @@ const AppliedJobs = () => {
         queryKey: ['myApplied'],
         queryFn: async () => {
             if (user?.email) {
-                const data = await fetch(`https://connect-job-681f5.web.app/applied/${user?.email}`)
+                const data = await fetch(`https://connect-job-server.vercel.app/applied/${user?.email}`)
                 return await data.json();
 
             }
