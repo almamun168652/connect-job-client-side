@@ -9,20 +9,46 @@ const MyjobTr = ({ item, refetch }) => {
 
 
 
-    const handleDeleteJob = async (_id) => {
+
+
+    const hanldeDelete = async (_id) => {
+
         try {
-            const response = await fetch(`https://connect-job-server.vercel.app/jobs/${_id}`, {
-                method: "DELETE",
-            });
-            const result = await response.json();
-            if (result.deletedCount > 0) {
-                Swal.fire("Delete", "Successfully Delete", "success");
-                refetch();
-            }
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You want to delete it?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+
+                    try {
+                        const response = await fetch(`https://connect-job-681f5.web.app/jobs/${_id}`, {
+                            method: "DELETE",
+                        });
+                        const result = await response.json();
+                        if (result.deletedCount > 0) {
+                            Swal.fire("Delete", "Successfully Delete", "success");
+                            refetch();
+                        }
+                    } catch (error) {
+                        console.log(error);
+                    }
+                }
+            })
+
         } catch (error) {
             console.log(error);
         }
-    };
+
+    }
+
+
+
+
 
     return (
         <tr key={item._id} className="bg-sky-300 border-b  dark:border-gray-700 hover:bg-gray-50">
@@ -46,7 +72,7 @@ const MyjobTr = ({ item, refetch }) => {
             </td>
             <td scope="row" className="px-6 py-4 text-gray-900">
                 {/* AiFillDelete */}
-                <AiFillDelete onClick={() => handleDeleteJob(item._id)} className='mx-auto cursor-pointer text-3xl text-red-700'></AiFillDelete>
+                <AiFillDelete onClick={() => hanldeDelete(item._id)} className='mx-auto cursor-pointer text-3xl text-red-700'></AiFillDelete>
 
             </td>
         </tr>

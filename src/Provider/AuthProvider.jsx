@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
     //         const loggedUser = { email: userEmail }
     //         setUser(currentUser)
     //         if (currentUser) {
-    //             axios.post("https://connect-job-server.vercel.app/jwt", loggedUser, { withCredentials: true })
+    //             axios.post("https://connect-job-681f5.web.app/jwt", loggedUser, { withCredentials: true })
     //                 .then(result => {
     //                     console.log(result.data);
     //                 })

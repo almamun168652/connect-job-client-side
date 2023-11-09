@@ -67,7 +67,7 @@ const JobCatCard = ({ item }) => {
 
                 <div className='w-full text-right'>
                     {/* <Link to={`/job/${_id}`}> */}
-                    <button onClick={()=> handleDetailsGo(_id)} className='bg-[#152475] px-4 py-1 mt-1 rounded-md cursor-pointer text-white'>View Details</button>
+                    <button onClick={()=> handleDetailsGo(_id)} className='my'>View Details</button>
                     {/* </Link> */}
                 </div>
             </div>

@@ -52,7 +52,7 @@ const AddProduct = () => {
 
 
         try {
-            const response = await fetch("https://connect-job-server.vercel.app/jobs", {
+            const response = await fetch("https://connect-job-681f5.web.app/jobs", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

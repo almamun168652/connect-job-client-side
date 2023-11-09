@@ -15,7 +15,7 @@ const Update = () => {
     const { data, refetch, isLoading } = useQuery({
         queryKey: ['updateData'],
         queryFn: async () => {
-            const data = await fetch(`https://connect-job-server.vercel.app/job/${id}`);
+            const data = await fetch(`https://connect-job-681f5.web.app/job/${id}`);
             return await data.json();
         }
     })
@@ -69,7 +69,7 @@ const Update = () => {
         }
 
         try {
-            const response = await fetch(`https://connect-job-server.vercel.app/jobs/${data._id}`, {
+            const response = await fetch(`https://connect-job-681f5.web.app/jobs/${data._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
