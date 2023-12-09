@@ -2,6 +2,8 @@
 
 ## Live-Link: [Live-Link](https://connect-job-681f5.web.app)
 
+### Connect Job Single Page Application(SPA) built using React.js, React-Icons, React-Router, Tailwind, AOS, Google Firebase, Node.js, Express.js, MongoDB.
+
 ### Project Features
 - You can use our Connect-Job website to find various job post.
 - Here you can see 4 different category of job.
